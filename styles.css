@@ -1,4 +1,7 @@
-﻿    :root {
+﻿    html {
+    scroll-behavior: smooth;
+}   
+    :root {
       --laranja: #ff8a1f;
       --laranja-escuro: #e07012;
       --marrom: #3b2416;
@@ -72,12 +75,21 @@
 
     nav ul {
       list-style: none;
+      margin: 0;
+      padding: 0;
       display: flex;
       gap: 1.25rem;
       font-size: 0.95rem;
     }
 
+    .hamburger {
+      display: none;
+    }
+
     nav li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       position: relative;
       cursor: pointer;
     }
@@ -97,26 +109,7 @@
       width: 100%;
     }
 
-    .btn-header {
-      padding: 0.55rem 1rem;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, var(--laranja), var(--laranja-escuro));
-      color: var(--branco);
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn-header:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
-    }
+  
 
     /* ===== HERO ===== */
     .hero {
@@ -176,31 +169,6 @@
       margin-bottom: 1.3rem;
     }
 
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .badge {
-      padding: 0.4rem 0.85rem;
-      border-radius: 999px;
-      border: 1px dashed rgba(59, 36, 22, 0.3);
-      background: rgba(255, 255, 255, 0.85);
-      font-size: 0.78rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      white-space: nowrap;
-    }
-
-    .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--verde);
-    }
 
     .hero-actions {
       display: flex;
@@ -250,49 +218,46 @@
       transform: translateY(0);
     }
 
-    /* ===== BOTÃO ANIMADO HAMBÚRGUER ===== */
+    /* ===== BOTÃO WHATSAPP SIMPLES ===== */
     .btn-hamburguer {
-      position: relative;
-      padding: 0.95rem 3.5rem 0.95rem 1.4rem;
+      padding: 0.95rem 1.5rem;
       border-radius: 999px;
       border: none;
       cursor: pointer;
-      background: linear-gradient(135deg, var(--laranja-escuro), var(--marrom-claro));
-      color: var(--branco);
+      background: #25d366;
+      color: #ffffff;
       font-size: 0.98rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      overflow: hidden;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+      letter-spacing: 0.08em;
       display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      gap: 0.65rem;
+      transition: background-color 0.2s ease, transform 0.15s ease;
     }
 
     .btn-hamburguer:hover {
-      transform: translateY(-1px) scale(1.01);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+      background: #1ebe5c;
+      transform: translateY(-1px);
     }
 
     .btn-hamburguer:active {
-      transform: translateY(0) scale(0.99);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+      transform: translateY(0);
+      background: #1aa757;
     }
 
-    .btn-glow {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 10% 0, #ffeac6 0, transparent 55%);
-      mix-blend-mode: screen;
-      opacity: 0.15;
-      pointer-events: none;
+    .btn-hamburguer.btn-whatsapp {
+      padding: 0.85rem 1.4rem;
+      min-width: 220px;
     }
 
-    .btn-hamburguer-label {
-      position: relative;
-      z-index: 1;
+    .btn-hamburguer.btn-whatsapp i {
+      font-size: 1.1rem;
+    }
+
+    .btn-hamburguer span {
+      display: inline-block;
+      line-height: 1;
     }
 
     .animated-button {
@@ -922,6 +887,69 @@
       align-items: center;
     }
 
+    .btn-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.95rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--branco);
+      font-weight: 700;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--branco);
+      font-weight: 700;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-location .loader {
+      width: 18px;
+      height: 18px;
+      position: relative;
+      transform: rotate(45deg);
+      transform-origin: center center;
+      flex-shrink: 0;
+    }
+
+    .btn-location .loader:before,
+    .btn-location .loader:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50% 50% 0 50%;
+      background-image: radial-gradient(circle 8px at 50% 50%, transparent 94%, #ff4747);
+    }
+
+    .btn-location .loader:after {
+      animation: pulse-ytk0dhmd 1.2s infinite;
+      transform: perspective(336px) translateZ(0px);
+    }
+
+    @keyframes pulse-ytk0dhmd {
+      to {
+        transform: perspective(336px) translateZ(168px);
+        opacity: 0;
+      }
+    }
+
+    .btn-location:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
     .cta-small {
       padding: 0.6rem 1.1rem;
       border-radius: 999px;
@@ -934,7 +962,7 @@
     footer {
   padding: 1.5rem 0 2rem;
   border-top: 1px solid rgba(59, 36, 22, 0.15);
-  background: linear-gradient(to right, #3e2723, #c9a646, #00640054);
+  background: linear-gradient(to right, #3e2723, #75270f, #4d1505fd, #b94522  );
   color: #fff;
   display: flex;              /* ativa flexbox */
   flex-direction: column;     /* organiza em coluna */
@@ -990,26 +1018,121 @@ footer .footer-inner {
     @media (max-width: 870px) {
       .hero-grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: 2rem;
+        gap: 1.25rem;
       }
 
       .hero {
-        padding-top: 2rem;
+        padding: 1.8rem 0 1.6rem;
+        min-height: auto;
+      }
+
+      /* Torna o cartão do hero adaptável e evita estouro horizontal */
+      .hero-card {
+        min-width: 0;
+        width: 100%;
+        max-width: 420px;
+        padding: 1.6rem;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .hero-actions {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center; /* centraliza botões */
+        gap: 0.8rem;
+        margin-top: 1rem;
       }
 
       .hero-actions button {
         min-width: 0;
-        width: 100%;
-        max-width: 100%;
+        width: auto; /* evita esticar à largura total */
+        max-width: 340px; /* limite confortável para mobile */
+        display: block;
+        margin: 0 auto;
+        flex: 0 0 auto; /* impedir crescimento vertical em coluna */
       }
 
+      /* Reduz tamanho de botões no mobile intermediário */
+      .animated-button {
+        padding: 10px 26px;
+        font-size: 14px;
+        border-radius: 60px;
+      }
+
+      .secondary-button {
+        padding: 0.6rem 1rem;
+        font-size: 14px;
+        border-radius: 60px;
+      }
+
+      .btn-hamburguer {
+        padding: 0.7rem 1rem 0.7rem 1rem;
+        font-size: 14px;
+        border-radius: 60px;
+        max-width: 360px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .burger-icon-wrap {
+        right: 0.6rem;
+        width: 40px;
+        height: 34px;
+      }
+
+      /* mobile: hide default horizontal menu, show hamburger */
       nav ul {
         display: none;
+      }
+
+      .hamburger {
+        display: table-row;
+        
+        background: transparent;
+        border: none;
+        gap: 4px;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        margin-top: 0.3rem;
+        margin-right: 1rem;
+        display: block;
+        width: 1.5rem;
+        height: 2.5px;
+        background: #eed58f;
+        border-radius: 1rem;
+      }
+
+      /* mobile menu when open */
+      nav.open ul,
+      nav[aria-expanded="true"] ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.85rem;
+        position: absolute;
+        top: 100%;
+        right: 1.5rem;
+        left: 1.5rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+        border-radius: 12px;
+        box-shadow: 0 14px 36px rgba(0,0,0,0.18);
+        z-index: 40;
+      }
+
+      nav.open ul li a,
+      nav[aria-expanded="true"] ul li a {
+        display: block;
+        padding: 0.9rem 1rem;
+        color: var(--marrom);
+        font-weight: 700;
+        text-align: center;
+        background: transparent;
+        border-radius: 8px;
       }
 
       .cta-box {
@@ -1027,7 +1150,7 @@ footer .footer-inner {
 
       .burger-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.4rem;
+        gap: 1rem;
       }
     }
 
@@ -1040,17 +1163,41 @@ footer .footer-inner {
         grid-template-columns: minmax(0, 1fr);
       }
 
+      /* Ajustes mais compactos para telefones */
+
       .hero-card {
-        padding: 1.3rem 1rem 1.4rem;
+        padding: 1rem;
+        max-width: 100%;
+      }
+
+      .hero-actions button {
+        max-width: 300px;
+        flex: 0 0 auto; /* impedir crescimento vertical em coluna */
       }
 
       .btn-hamburguer {
         width: 100%;
         justify-content: flex-start;
+        padding: 0.6rem 0.9rem 0.6rem 0.9rem;
+        font-size: 13px;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .animated-button {
+        padding: 8px 20px;
+        font-size: 13px;
+        border-radius: 50px;
+      }
+
+      .secondary-button {
+        padding: 0.5rem 0.9rem;
+        font-size: 13px;
+        border-radius: 50px;
       }
 
       .hero-copy h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
 
       .about-card {
@@ -1058,11 +1205,11 @@ footer .footer-inner {
       }
 
       .about-copy {
-        padding: 1.2rem;
+        padding: 1rem;
       }
 
       .about-copy h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
     }
 
@@ -1103,5 +1250,9 @@ footer .footer-inner {
   .img-footer img {
     margin-bottom: 1rem;      /* separa imagem do texto */
     width: 30vw;              /* ajusta tamanho proporcional */
+  }
+
+  .logo {
+    margin-left: 1rem; /* Reduz o tamanho do logo no celular */
   }
 }

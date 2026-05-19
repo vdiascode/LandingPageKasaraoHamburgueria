@@ -16,16 +16,18 @@
       </div>
 
       <nav aria-label="Seções do site">
-        <ul>
-          <li data-scroll-to="#cardapio">Cardápio</li>
-          <li data-scroll-to="#destaques">Destaques</li>
-          <li data-scroll-to="#contato">Contato</li>
+        <button class="hamburger" aria-label="Abrir menu" aria-controls="site-menu" aria-expanded="false">
+          <span> </span>
+          <span> </span>
+          <span> </span>
+        </button>
+        <ul class="navbar-list" id="site-menu">
+          <li><a href="#home" data-scroll-to="#home">Início</a></li>
+          <li><a href="#cardapio" data-scroll-to="#cardapio">Cardápio</a></li>
+          <li><a href="#quem-somos" data-scroll-to="#quem-somos">Quem somos</a></li
+          <li><a href="#contato" data-scroll-to="#contato">Contato</a></li>
         </ul>
       </nav>
-
-      <button class="btn-header" data-scroll-to="#cardapio">
-        Ver Cardápio
-      </button>
     </div>
   </header>
 
@@ -50,25 +52,8 @@
             em cada etapa. Do fogo à sua mesa, sem segredos, só sabor.
           </p>
 
-          <div class="hero-badges">
-            <div class="badge">
-              <span class="badge-dot"></span>
-              Blend próprio de carnes selecionadas
-            </div>
-            <div class="badge">
-              <span class="badge-dot"></span>
-              Molhos e acompanhamentos artesanais
-            </div>
-            <div class="badge">
-              <span class="badge-dot"></span>
-              Porções de Fritas, Onion Rings e mais
-            </div>
-             <div class="badge">
-              <span class="badge-dot"></span>
-              Ambiente agradável e atendimento ágil
-            </div>
-          </div>
-          </div>
+
+        </div>
 
           <div class="hero-visual">
           <article class="hero-card" aria-label="Destaque da casa">
@@ -145,7 +130,7 @@
           </article>
 
           <article class="burger-card">
-            <img class="burger-card-image" src="assets/boi-bandido.jpg" alt="Boi Bandido" />
+            <img class="burger-card-image" src="assets/Boi-Bandido.jpg" alt="Boi Bandido" />
             <div class="burger-card-body">
               <div class="burger-card-top">
                 <span class="burger-tag">Classico</span>
@@ -285,7 +270,7 @@
       <div class="container">
         <div class="cta-box">
           <div class="cta-text">
-            <h2>Pronto para provar o “artesanais de verdade”?</h2>
+            <h2>Pronto para provar um artesanal de verdade?</h2>
             <p>
               Faça seu pedido agora mesmo pelo WhatsApp ou peça pelo app de
               entrega parceiro. Estamos esperando você no Kasarão.
@@ -293,25 +278,18 @@
           </div>
 
           <div class="cta-actions">
-            <button class="btn-hamburguer" id="btnWhatsApp">
-              <div class="btn-glow"></div>
-              <div class="btn-hamburguer-label">Pedir pelo WhatsApp</div>
-              <div class="burger-icon-wrap">
-                <div class="burger-icon" aria-hidden="true">
-                  <div class="bun-top"></div>
-                  <div class="sesame">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="lettuce"></div>
-                  <div class="cheese"></div>
-                  <div class="patty"></div>
-                  <div class="bun-bottom"></div>
-                </div>
-              </div>
+            <button class="btn-hamburguer btn-whatsapp" id="btnWhatsApp" aria-label="Pedir pelo WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <span>Pedir pelo WhatsApp</span>
             </button>
 
-            <div class="cta-small">
-              Endereço: Rua do Sabor, 123 – Bairro Gourmet
+            <button class="secondary-button btn-location" id="btnLocation" aria-label="Definir rota no Google Maps">
+              <div class="loader" aria-hidden="true"></div>
+              <span>Definir rota no Google Maps</span>
+            </button>
+
+            <div class="cta-small"> 
+              Endereço: RUA DOS BISPOS 196 - GABIROBA - ITABIRA - MG <br>
             </div>
           </div>
         </div>
