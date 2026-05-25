@@ -24,7 +24,7 @@
         <ul class="navbar-list" id="site-menu">
           <li><a href="#home" data-scroll-to="#home">Início</a></li>
           <li><a href="#cardapio" data-scroll-to="#cardapio">Cardápio</a></li>
-          <li><a href="#quem-somos" data-scroll-to="#quem-somos">Quem somos</a></li
+          <li><a href="#quem-somos" data-scroll-to="#quem-somos">Quem somos</a></li>
           <li><a href="#contato" data-scroll-to="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -52,48 +52,42 @@
             em cada etapa. Do fogo à sua mesa, sem segredos, só sabor.
           </p>
 
-
-        </div>
-
-          <div class="hero-visual">
-          <article class="hero-card" aria-label="Destaque da casa">
-           
-
-            
-              <div class="burger-plate">
-                <div class="burger-2d" aria-hidden="true">
-                  <div class="bun-top"></div>
-                  <div class="sesame">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="lettuce"></div>
-                  <div class="cheese"></div>
-                  <div class="patty"></div>
-                  <div class="bun-bottom"></div>
-                  <div class="shadow"></div>
-                </div>
-                <div class="plate"></div>
-              </div>
-      <!-- BOTÕES DO HERO ABAIXO DO CARD -->
-        </article>
-
-        <div class="hero-actions">
-          <button class="animated-button" id="btnFazerPedido" aria-label="Fazer pedido agora">
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
-              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-            </svg>
-            <span class="text">Fazer pedido</span>
-            <span class="circle"></span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
-              <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-            </svg>
-          </button>
+          <div class="hero-actions">
+            <button class="animated-button" id="btnFazerPedido" aria-label="Fazer pedido agora">
+              <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
+              <span class="text">Fazer pedido</span>
+              <span class="circle"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
+            </button>
 
           <button class="secondary-button" data-scroll-to="#cardapio" aria-label="Ver cardápio">
-            Ver cardápio
+            <span>Ver cardápio</span>
           </button>
+          </div>
         </div>
-        
+
+        <div class="hero-visual">
+          <article class="hero-card" aria-label="Destaque da casa">
+            <div class="burger-plate">
+              <div class="burger-2d" aria-hidden="true">
+                <div class="bun-top"></div>
+                <div class="sesame">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="lettuce"></div>
+                <div class="cheese"></div>
+                <div class="patty"></div>
+                <div class="bun-bottom"></div>
+                <div class="shadow"></div>
+              </div>
+              <div class="plate"></div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -104,7 +98,12 @@
           <p>8 hambúrgueres com fotos reais, descrição e sabor marcante. Escolha o seu favorito.</p>
         </div>
 
-        <div class="burger-grid">
+        <div class="menu-carousel" aria-label="Carrossel do cardápio">
+          <button class="carousel-button carousel-button-prev" type="button" aria-label="Hambúrguer anterior">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+
+          <div class="burger-grid" tabindex="0">
           <article class="burger-card active">
             <img class="burger-card-image" src="assets/mimosa.jpg" alt="Mimosa" />
             <div class="burger-card-body">
@@ -200,6 +199,11 @@
               <p>Pão de brioche, 2 blend bovino de 120g, cheddar, bacon em tiras, anéis de cebola, molho da casa.</p>
             </div>
           </article>
+          </div>
+
+          <button class="carousel-button carousel-button-next" type="button" aria-label="Próximo hambúrguer">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -288,9 +292,7 @@
               <span>Definir rota no Google Maps</span>
             </button>
 
-            <div class="cta-small"> 
-              Endereço: RUA DOS BISPOS 196 - GABIROBA - ITABIRA - MG <br>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -300,22 +302,27 @@
   <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
-      <div class="img-footer"><img src="assets/logo2.png" alt=""></div>
-      <div>
-        © <span id="year"></span> Kasarão Hamburgueria. Todos os direitos
-        reservados.
+      <div class="footer-brand">
+        <div class="img-footer"><img src="assets/logo2.png" alt="Logo Kasarão Hamburgueria"></div>
       </div>
-      <div>
-        “Artesanais de verdade” – hamburgueria de quem ama hambúrguer de verdade.
+
+      <div class="footer-info">
+        <span>© <span id="year"></span> Kasarão Hamburgueria</span>
+        <span>Rua dos Bispos, 196 - Gabiroba - Itabira/MG</span>
       </div>
+
       <div class="footer-contacts">
-      <a href="https://instagram.com/seuPerfil" target="_blank" class="social-icon instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/5531999999999" target="_blank" class="social-icon whatsapp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-    </div>
+        <a href="https://instagram.com/seuPerfil" target="_blank" class="social-icon instagram" aria-label="Instagram do Kasarão">
+          <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm8.95 2.35a.95.95 0 1 1 0 1.9.95.95 0 0 1 0-1.9ZM12 7.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/5531999999999" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp do Kasarão">
+          <svg class="social-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.04 2a9.84 9.84 0 0 1 8.5 14.78L22 22l-5.36-1.41A9.96 9.96 0 0 1 12.04 22 9.99 9.99 0 0 1 2 12.04 10.04 10.04 0 0 1 12.04 2Zm0 2A8.03 8.03 0 0 0 4 12.04a7.92 7.92 0 0 0 1.21 4.22l.22.35-.78 2.84 2.92-.76.34.2A8.04 8.04 0 1 0 12.04 4Zm-3.5 3.68c.2-.45.42-.46.62-.47h.53c.17 0 .45.06.68.32.23.25.89.86.89 2.1 0 1.24-.91 2.44-1.04 2.61-.13.17-.18.32-.06.57.13.25.56.92 1.2 1.49.82.73 1.52.96 1.77 1.07.25.13.4.11.55-.06.17-.18.64-.75.81-1 .17-.25.34-.21.58-.13.23.08 1.48.7 1.73.82.25.13.42.19.48.3.06.13.06.72-.17 1.41-.23.69-1.35 1.32-1.88 1.37-.48.05-1.08.07-1.74-.11-.4-.13-.91-.3-1.57-.58-2.77-1.2-4.57-3.99-4.71-4.17-.13-.18-1.13-1.5-1.13-2.86s.72-2.03.97-2.31c.25-.28.55-.36.73-.36Z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 

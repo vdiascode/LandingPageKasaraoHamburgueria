@@ -72,3 +72,43 @@
       rotateBurgers();
       setInterval(rotateBurgers, 3600);
     }
+
+    const burgerTrack = document.querySelector('.burger-grid');
+    const prevBurger = document.querySelector('.carousel-button-prev');
+    const nextBurger = document.querySelector('.carousel-button-next');
+
+    if (burgerTrack && prevBurger && nextBurger && burgerCards.length) {
+      const getClosestCardIndex = function () {
+        const trackCenter = burgerTrack.scrollLeft + burgerTrack.clientWidth / 2;
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        burgerCards.forEach(function (card, index) {
+          const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+          const distance = Math.abs(trackCenter - cardCenter);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        });
+
+        return closestIndex;
+      };
+
+      const scrollToBurger = function (index) {
+        const safeIndex = Math.max(0, Math.min(index, burgerCards.length - 1));
+        burgerCards[safeIndex].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center',
+        });
+      };
+
+      prevBurger.addEventListener('click', function () {
+        scrollToBurger(getClosestCardIndex() - 1);
+      });
+
+      nextBurger.addEventListener('click', function () {
+        scrollToBurger(getClosestCardIndex() + 1);
+      });
+    }
